@@ -22,6 +22,16 @@ classDiagram
 ## Diagrama de clases UML con draw.io
 El repositorio está configurado para crear Diagramas de clases UML con ```draw.io```. Para usarlo simplemente agrega un archivo con extensión ```.drawio.png```, das doble clic sobre el mismo y se activará el editor ```draw.io``` incrustado en ```VSCode``` para edición. Asegúrate de agregar las formas UML en el menú de formas del lado izquierdo (opción ```+Más formas```).
 
+## Estructura del Proyecto
+
+El proyecto incluye:
+- `miPrincipal/` - Código fuente principal
+- `miTest/` - Pruebas unitarias con JUnit
+- `lib/` - Bibliotecas externas (JUnit)
+- `build/` - Directorio de compilación (generado automáticamente, ignorado por git)
+- `makefile` - Archivo de configuración para compilar, probar y ejecutar
+- `.gitignore` - Archivos y directorios excluidos del control de versiones
+
 ## Uso del proyecto con make
 
 ### Default - Compilar+Probar+Ejecutar
@@ -84,3 +94,15 @@ java -jar lib/junit-platform-console-standalone-1.5.2.jar -class-path build --se
 java -cp build miPrincipal.Principal
 ```
 Los comandos anteriores están considerados para un ambiente Linux. [Referencia.](https://www.baeldung.com/junit-run-from-command-line)
+
+## Notas Importantes
+
+### Archivos Ignorados por Git
+El repositorio incluye un archivo `.gitignore` que previene que los siguientes archivos sean incluidos en el control de versiones:
+- Archivos compilados (`.class`)
+- Directorio `build/` completo
+- Archivo temporal `compfiles.txt`
+- Archivos de configuración del IDE
+- Archivos del sistema operativo
+
+Esto asegura que solo el código fuente sea versionado, manteniendo el repositorio limpio.
