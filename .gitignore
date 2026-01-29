@@ -16,6 +16,9 @@ build/
 *.tar.gz
 *.rar
 
+# But keep library JARs
+!lib/*.jar
+
 # Virtual machine crash logs
 hs_err_pid*
 
